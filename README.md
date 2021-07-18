@@ -19,3 +19,10 @@
 
 
 <img width="1253" alt="스크린샷 2021-07-18 오후 12 51 57" src="https://user-images.githubusercontent.com/80943394/126055529-76038ec8-4e2e-464c-996b-18a2d370b32a.png">
+
+
+## Field.js 🌳
+
+- This is the file gathered only for related field.
+- show items(carrots and bugs) & click event on the field
+
