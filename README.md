@@ -40,7 +40,8 @@
 - 'this.onItemClick' event error from function onClick()
 - There are 3 ways we can solce this issue
 1. using arrow function
-2. 
+2. using bind
+<img width="442" alt="스크린샷 2021-07-18 오후 3 15 51" src="https://user-images.githubusercontent.com/80943394/126057690-b0edf18a-d0fc-47ab-89ea-ab733959ed07.png">
 
 ## Sound.js 🎶
 
