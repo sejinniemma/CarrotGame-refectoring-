@@ -1,12 +1,7 @@
 'use strict'
 import PopUp from "./popup.js";
 import Field from "./field.js";
-
-const bgSound = new Audio('./sound/bg.mp3');
-const alertSound = new Audio('./sound/alert.wav');
-const bugSound = new Audio('./sound/bug_pull.mp3');
-
-const winSound = new Audio('./sound/game_win.mp3');
+import * as sound from "./sound.js";
 
 let score = 0;
 let carrotCount = 5;
@@ -53,11 +48,11 @@ function onitemClick(item){
         started = false;
         hideGameButton();
         stopGameTimer();
-        stopSound(bgSound);
+        sound.StopBackground();
         if(win){
-            playSound(winSound);
+            sound.PlayWin();
         }else{
-            playSound(bugSound);
+            sound.PlayAlert();
         }
         gameFinishBanner.showWithText(win ? 'YOU WIN🎉' : 'YOU LOST💩');
      }
@@ -83,8 +78,7 @@ function startGame(){
     StartgameTimer();
     showStopButton();
     showTimerAndScore();
-    playSound(bgSound);
-    
+    sound.PlayBackground();    
 }
 
 function stopGame(){
@@ -92,8 +86,8 @@ function stopGame(){
     stopGameTimer();
     hideGameButton();
     gameFinishBanner.showWithText('REPLAY❓');
-    playSound(alertSound);
-    stopSound(bgSound);
+    sound.PlayAlert();
+    sound.StopBackground();
 }
 
 // showTimerAndScore
@@ -151,11 +145,3 @@ function showGameButton(){
 }
 
 
-function playSound(sound){
-    sound.currentTime = 0;
-    sound.play();
-}
-
-function stopSound(sound){
-    sound.pause();
-}
