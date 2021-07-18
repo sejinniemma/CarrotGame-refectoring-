@@ -1,19 +1,25 @@
 'use strict'
 import PopUp from "./popup.js";
+import Field from "./field.js";
 
 const bgSound = new Audio('./sound/bg.mp3');
 const alertSound = new Audio('./sound/alert.wav');
 const bugSound = new Audio('./sound/bug_pull.mp3');
-const carrotSound = new Audio('./sound/carrot_pull.mp3');
+
 const winSound = new Audio('./sound/game_win.mp3');
 
+let score = 0;
+let carrotCount = 5;
+let bugCount = 5;
+let timer = undefined;
+let started = false;
+
 const GAME_DURATON_SEC = 5;
-const CARROT_SIZE = 80;
-const gameField = document.querySelector('.game__field');
-const fieldRect = gameField.getBoundingClientRect();
 const gameTimer = document.querySelector('.game__timer');
 const gameBtn = document.querySelector('.game__button');
 const gameScore = document.querySelector('.game__score');
+
+
 
 const gameFinishBanner = new PopUp();
 gameFinishBanner.setClickListener(()=>{
@@ -22,11 +28,43 @@ gameFinishBanner.setClickListener(()=>{
     showGameButton();
 })
 
-let score = 0;
-let carrotCount = 5;
-let bugCount = 5;
-let timer = undefined;
-let started = false;
+
+
+const gameField = new Field(carrotCount,bugCount);
+gameField.setClickListener(onitemClick);
+
+function onitemClick(item){
+        if(!started) {
+            return;
+        }
+        if(item === 'carrot'){
+            score++;
+            updateScoreBoard();
+            if(score === carrotCount){
+                finishGame(true);
+            } 
+        }else if(item === 'bug'){ 
+                finishGame(false);
+        }
+       
+    }
+
+    function finishGame(win){
+        started = false;
+        hideGameButton();
+        stopGameTimer();
+        stopSound(bgSound);
+        if(win){
+            playSound(winSound);
+        }else{
+            playSound(bugSound);
+        }
+        gameFinishBanner.showWithText(win ? 'YOU WIN🎉' : 'YOU LOST💩');
+     }
+     
+     function updateScoreBoard(){
+         gameScore.innerHTML = carrotCount - score;
+     }
 
 
 
@@ -66,35 +104,10 @@ function showTimerAndScore(){
 
 //  creat carrots & bugs randomly on gameField
 function initGame(){
-    gameField.innerHTML = '';
     gameScore.innerText = carrotCount;
-    addItem('carrot',carrotCount,'img/carrot.png');
-    addItem('bug',bugCount,'img/bug.png');
+    gameField.init();
 }
-function addItem(className, count , imgPath){
-    const x1 = 0;
-    const y1 = 0;
-    const x2 = fieldRect.width - CARROT_SIZE;
-    const y2 = fieldRect.height - CARROT_SIZE;
 
-    for(let i=0; i < count; i++){
-        const item = document.createElement('img');
-        item.setAttribute('class', className);
-        item.setAttribute('src', imgPath);
-        item.style.position = 'absolute';
-    
-
-        const x = randomNumnber(x1, x2);
-        const y = randomNumnber(y1, y2);
-        item.style.left =`${x}px`;
-        item.style.top =`${y}px`;
-
-        gameField.appendChild(item);
-    } 
-}
-function randomNumnber(min, max) {
-    return Math.random() * (max - min) + min;
-  }
   
 
 //   make game Timer
@@ -137,45 +150,6 @@ function showGameButton(){
     gameBtn.style.visibility ="visible";
 }
 
-
-// remove carrot 
-
-gameField.addEventListener('click',onFieldClick);
-
-function onFieldClick(event){
-    if(!started) {
-        return;
-    }
-    const target = event.target;
-    if(target.matches('.carrot')){
-        target.remove();
-        playSound(carrotSound);
-        score++;
-        updateScoreBoard();
-        if(score === carrotCount){
-            finishGame(true);
-        } 
-    }else if(target.matches('.bug')){ 
-            finishGame(false);
-    }
-   
-}
-function finishGame(win){
-   started = false;
-   hideGameButton();
-   stopGameTimer();
-   stopSound(bgSound);
-   if(win){
-       playSound(winSound);
-   }else{
-       playSound(bugSound);
-   }
-   gameFinishBanner.showWithText(win ? 'YOU WIN🎉' : 'YOU LOST💩');
-}
-
-function updateScoreBoard(){
-    gameScore.innerHTML = carrotCount - score;
-}
 
 function playSound(sound){
     sound.currentTime = 0;
