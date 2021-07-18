@@ -23,6 +23,8 @@
 
 ## Field.js 🌳
 
-- This is the file gathered only for related field.
+- This is the file related with field.
 - show items(carrots and bugs) & click event on the field
+
+<img width="1246" alt="스크린샷 2021-07-18 오후 1 48 14" src="https://user-images.githubusercontent.com/80943394/126056236-ca58ef3c-fef7-4d9b-b600-5e54677bd9b0.png">
 
