@@ -35,6 +35,13 @@
 3. show items on the field
 <img width="726" alt="스크린샷 2021-07-18 오후 1 57 38" src="https://user-images.githubusercontent.com/80943394/126056302-f613131d-1ec7-46da-9f1d-a50711c14e1e.png">
 
+### binding issue 💥
+- when we send function as a parameter, information about Class dosen't send with parameter
+- 'this.onItemClick' event error from function onClick()
+- There are 3 ways we can solce this issue
+1. using arrow function
+2. 
+
 ## Sound.js 🎶
 
 - This is a sound file 
