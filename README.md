@@ -56,3 +56,13 @@
 
 https://user-images.githubusercontent.com/80943394/126057231-87559f0b-85d5-4cd8-bdba-7ad452a8f939.mov
 
+## Game.js
+### main function
+- game start & stop, make score, finish game banner(win,loose,replay)
+- setGameStop (I wasn't able to make finsh game banner in game.js so I made this function to send to 'main.js' so that I can reference finishgamebanner) 😆
+- using switch(result) (main.js) > which is for making finishgamebanner that is referred from setGameStop(result) in game.js
+
+
+
+
+
