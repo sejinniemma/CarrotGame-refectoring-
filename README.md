@@ -57,11 +57,17 @@
 https://user-images.githubusercontent.com/80943394/126057231-87559f0b-85d5-4cd8-bdba-7ad452a8f939.mov
 
 ## Game.js
-### main function
+### Main function
 - game start & stop, make score, finish game banner(win,loose,replay)
-- setGameStop (I wasn't able to make finsh game banner in game.js so I made this function to send to 'main.js' so that I can reference finishgamebanner) 😆
-- using switch(result) (main.js) > which is for making finishgamebanner that is referred from setGameStop(result) in game.js
 
+### setGameStopListener 
+- I wasn't able to make finsh game banner in game.js so I made this function to send to 'main.js' so that I can reference finishgamebanner 😆
+
+### switch (main.js) 
+- This is for making finishgamebanner that is referred from setGameStopListener in game.js
+- Let's see down below!
+
+<img width="1440" alt="스크린샷 2021-07-19 오후 5 46 50" src="https://user-images.githubusercontent.com/80943394/126131553-79e42bea-2716-4fa2-b92b-df501620b7db.png">
 
 
 
