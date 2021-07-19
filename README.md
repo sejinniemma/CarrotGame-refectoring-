@@ -56,7 +56,7 @@
 
 https://user-images.githubusercontent.com/80943394/126057231-87559f0b-85d5-4cd8-bdba-7ad452a8f939.mov
 
-## Game.js
+## Game.js 🎮
 ### Main function
 - game start & stop, make score, finish game banner(win,loose,replay)
 
