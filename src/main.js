@@ -1,32 +1,35 @@
 'use strict'
 import PopUp from "./popup.js";
-import GameBuilder from "./game.js";
-
+import {GameBuilder,  Reason} from "./game.js";
+import * as sound from "./sound.js";
 
 const gameFinishBanner = new PopUp();
 const game = new GameBuilder()
- .WithGameDuration(5)
- .WithCarrotCount(5)
- .WithBugCount(5)
- .build();
+    .WithGameDuration(5)
+    .WithCarrotCount(5)
+    .WithBugCount(5)
+    .build();
 
 
 game.setGameStopListner((reason)=>{
     let message;
     switch (reason){
-        case 'cancel':
+        case Reason.cancel:
             message = 'Replay❓';
+            sound.PlayAlert();
             break ;
-        case 'win':
+        case Reason.win:
             message = 'YOU WON🎉';
+            sound.PlayWin();
             break;
-        case 'lose':
+        case Reason.lose:
             message = 'YOU LOSE💩';
+            sound.PlayAlert();
             break;
     }
 
     gameFinishBanner.showWithText(message);
-
+    
 })
 
 gameFinishBanner.setClickListener(()=>{

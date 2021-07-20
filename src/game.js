@@ -2,8 +2,14 @@
 import Field from "./field.js";
 import * as sound from "./sound.js";
 
+export const Reason = Object.freeze({
+    win : 'win',
+    lose : 'lose',
+    cancel : 'cancel',
+})
 
-export default class GamdBuilder{
+
+export class GameBuilder{
     WithGameDuration(gameDuration){
         this.gameDuration = gameDuration;
         return this;
@@ -49,7 +55,7 @@ class Game{
         
         this.gameBtn.addEventListener('click',()=>{
             if(this.started){
-                this.stop();
+                this.stop(Reason.cancel);
             }else {
                 this.start();
             } 
@@ -71,14 +77,12 @@ class Game{
     }
 
 
-    stop(){
+    stop(reason){
         this.started = false;
         this.stopGameTimer();
         this.hideGameButton();
-        sound.PlayAlert();
         sound.StopBackground();
-
-        this.gameStop && this.gameStop('cancel');
+        this.gameStop && this.gameStop(reason)
     }
 
     initGame(){
@@ -95,26 +99,13 @@ class Game{
             this.score++;
             this.updateScoreBoard();
             if(this.score === this.carrotCount){
-                this.finish(true);
+                this.stop(Reason.win);
             } 
         }else if(item === 'bug'){ 
-                this.finish(false);
+                this.stop(Reason.lose);
         }
     }
 
-    finish(win){
-        this.started = false;
-        this.hideGameButton();
-        this.stopGameTimer();
-        sound.StopBackground();
-        if(win){
-            sound.PlayWin();
-        }else{
-            sound.PlayAlert();
-        }
-        this.gameStop && this.gameStop(win? 'win' : 'lose');
-    }
-     
      updateScoreBoard(){
          this.gameScore.innerHTML = this.carrotCount - this.score;
      }
