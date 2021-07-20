@@ -74,7 +74,7 @@ https://user-images.githubusercontent.com/80943394/126057231-87559f0b-85d5-4cd8-
 
 - const game = new Game(5, 5, 5) > parameter dosen't clear
 - we can use builder for more clear recogination (naming)
-- I export 'class GameBuilder' instead of 'class Game' 
+- I exported 'class GameBuilder' instead of 'class Game' 
 
 <img width="1440" alt="스크린샷 2021-07-20 오후 1 35 35" src="https://user-images.githubusercontent.com/80943394/126262849-fa2c73b3-5490-41a6-94db-59677e5e53e3.png">
 
