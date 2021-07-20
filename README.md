@@ -70,5 +70,18 @@ https://user-images.githubusercontent.com/80943394/126057231-87559f0b-85d5-4cd8-
 <img width="1440" alt="스크린샷 2021-07-19 오후 5 46 50" src="https://user-images.githubusercontent.com/80943394/126131553-79e42bea-2716-4fa2-b92b-df501620b7db.png">
 
 
+### Build Pattern 👻
+
+- const game = new Game(5, 5, 5) > parameter dosen't clear
+- we can use builder for more clear recogination (naming)
+- I exported 'class GameBuilder' instead of 'class Game' 
+
+<img width="1440" alt="스크린샷 2021-07-20 오후 1 35 35" src="https://user-images.githubusercontent.com/80943394/126262849-fa2c73b3-5490-41a6-94db-59677e5e53e3.png">
 
 
+### Object.freeze()❄️
+
+- For some users like me who often make a typo
+- I made a strict object using freeze. 
+
+<img width="1440" alt="스크린샷 2021-07-20 오후 4 39 05" src="https://user-images.githubusercontent.com/80943394/126281482-a702af41-2633-4f20-a919-2fbbefeac21a.png">
