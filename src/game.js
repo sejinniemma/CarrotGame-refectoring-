@@ -2,7 +2,34 @@
 import Field from "./field.js";
 import * as sound from "./sound.js";
 
-export default class Game{
+
+export default class GamdBuilder{
+    WithGameDuration(gameDuration){
+        this.gameDuration = gameDuration;
+        return this;
+    }
+
+    WithCarrotCount(carrotCount){
+        this.carrotCount = carrotCount;
+        return this;
+    }
+
+    WithBugCount(bugCount){
+        this.bugCount = bugCount;
+        return this;
+    }
+
+    build(){
+        return new Game(
+            this.gameDuration,
+            this.carrotCount,
+            this.bugCount
+        )
+    }
+
+}
+
+class Game{
     constructor(gameDuration, carrotCount, bugCount){
         this.gameDuration = gameDuration;
         this.carrotCount = carrotCount;
@@ -33,6 +60,7 @@ export default class Game{
         this.gameStop = gameStop;
     }
 
+
     start(){
         this.started = true;
         this.initGame();
@@ -41,6 +69,7 @@ export default class Game{
         this.showTimerAndScore();
         sound.PlayBackground();    
     }
+
 
     stop(){
         this.started = false;
