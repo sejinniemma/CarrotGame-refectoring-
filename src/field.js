@@ -46,20 +46,19 @@ export default class Field {
 
             this.gameField.appendChild(item);
             
-            if(className === ItemType.bug){
+             if(className === ItemType.bug){
             
-                let k = randomNumnber(x1, x2);
-                let i = randomNumnber(y1, y2);
-                item.animate([
-                        { left: `${k}px` },
-                        { top: `${i}px` }
-        
-                   ], {
-                     duration: 10000,
-                     iterations: Infinity,
-                   })
+                 let k = randomNumnber(x1, x2);
+                 let i = randomNumnber(y1, y2);
+                 item.animate([
+                         { left: `${k}px` },
+                         { top: `${i}px` }
+                    ], {
+                      duration: 10000,
+                      iterations: Infinity,
+                    })
                     
-            }
+             }
         } 
 
             
