@@ -2,6 +2,11 @@
 import Field from "./field.js";
 import * as sound from "./sound.js";
 
+export const ItemType = Object.freeze({
+    carrot : 'carrot',
+    bug : 'bug',
+})
+
 export const Reason = Object.freeze({
     win : 'win',
     lose : 'lose',
@@ -31,6 +36,7 @@ export class GameBuilder{
             this.carrotCount,
             this.bugCount
         )
+    
     }
 
 }
@@ -95,13 +101,13 @@ class Game{
         if(!this.started) {
             return;
         }
-        if(item === 'carrot'){
+        if(item === ItemType.carrot){
             this.score++;
             this.updateScoreBoard();
             if(this.score === this.carrotCount){
                 this.stop(Reason.win);
             } 
-        }else if(item === 'bug'){ 
+        }else if(item === ItemType.bug){ 
                 this.stop(Reason.lose);
         }
     }
@@ -122,7 +128,7 @@ class Game{
     this.timer =  setInterval(()=>{
         if(remainingTimeSec <= 0){
             clearInterval(this.timer);
-            this.finish(this.carrotCount === this.score);
+            this.stop(this.carrotCount === this.score);
             return;
         }   
           this.updateTimerText(--remainingTimeSec);  

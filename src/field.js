@@ -1,4 +1,5 @@
 'use strict'
+import { ItemType } from "./game.js";
 import * as sound from "./sound.js";
 const CARROT_SIZE = 80;
 
@@ -19,8 +20,8 @@ export default class Field {
     
     init(){
         this.gameField.innerHTML = '';
-        this._addItem('carrot',this.carrotCount,'img/carrot.png');
-        this._addItem('bug',this.bugCount,'img/bug.png');
+        this._addItem(ItemType.carrot,this.carrotCount,'img/carrot.png');
+        this._addItem(ItemType.bug,this.bugCount,'img/bug.png');
     }
     
     

@@ -9,7 +9,7 @@ const game = new GameBuilder()
     .WithCarrotCount(5)
     .WithBugCount(5)
     .build();
-
+    
 
 game.setGameStopListner((reason)=>{
     let message;
@@ -36,6 +36,8 @@ gameFinishBanner.setClickListener(()=>{
     game.score = 0;
     game.start();
     game.showGameButton();
+   
+    
 })
 
 
