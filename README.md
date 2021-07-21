@@ -85,3 +85,15 @@ https://user-images.githubusercontent.com/80943394/126057231-87559f0b-85d5-4cd8-
 - I made a strict object using freeze. 
 
 <img width="1440" alt="스크린샷 2021-07-20 오후 4 39 05" src="https://user-images.githubusercontent.com/80943394/126281482-a702af41-2633-4f20-a919-2fbbefeac21a.png">
+
+### remove finish()
+
+- There are common functions so I tried to combine stop() with finish() as a one function
+- both of them is almost similer
+- make parameter : stop(reason)
+
+1. original
+<img width="1440" alt="스크린샷 2021-07-20 오후 5 43 12" src="https://user-images.githubusercontent.com/80943394/126426775-30215cfb-c66a-49c6-ba40-25fe067ea80e.png">
+
+2. change
+<img width="1440" alt="스크린샷 2021-07-20 오후 6 04 45" src="https://user-images.githubusercontent.com/80943394/126426851-1bd629e7-f9b2-40a9-8503-691c07414bdf.png">
