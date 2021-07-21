@@ -5,9 +5,9 @@ import * as sound from "./sound.js";
 
 const gameFinishBanner = new PopUp();
 const game = new GameBuilder()
-    .WithGameDuration(5)
-    .WithCarrotCount(5)
-    .WithBugCount(5)
+    .WithGameDuration(10)
+    .WithCarrotCount(10)
+    .WithBugCount(20)
     .build();
     
 

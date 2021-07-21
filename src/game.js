@@ -89,6 +89,7 @@ class Game{
         this.hideGameButton();
         sound.StopBackground();
         this.gameStop && this.gameStop(reason)
+        
     }
 
     initGame(){

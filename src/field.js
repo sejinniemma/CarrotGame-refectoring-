@@ -37,14 +37,33 @@ export default class Field {
             item.setAttribute('src', imgPath);
             item.style.position = 'absolute';
         
-    
-            const x = randomNumnber(x1, x2);
-            const y = randomNumnber(y1, y2);
+           
+            let x = randomNumnber(x1, x2);
+            let y = randomNumnber(y1, y2);
             item.style.left =`${x}px`;
             item.style.top =`${y}px`;
-    
+     
+
             this.gameField.appendChild(item);
+            
+            if(className === ItemType.bug){
+            
+                let k = randomNumnber(x1, x2);
+                let i = randomNumnber(y1, y2);
+                item.animate([
+                        { left: `${k}px` },
+                        { top: `${i}px` }
+        
+                   ], {
+                     duration: 10000,
+                     iterations: Infinity,
+                   })
+                    
+            }
         } 
+
+            
+
     }
 
    
@@ -53,9 +72,9 @@ export default class Field {
             if(target.matches('.carrot')){
                 target.remove();
                 sound.PlayCarrot();
-                this.onItemClick && this.onItemClick('carrot');
+                this.onItemClick && this.onItemClick(ItemType.carrot);
             }else if(target.matches('.bug')){ 
-                this.onItemClick && this.onItemClick('bug');
+                this.onItemClick && this.onItemClick(ItemType.bug);
             }
 
     }
