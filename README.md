@@ -1,5 +1,8 @@
 # 🥕Carrot-game ver.2 (Refectoring)
 
+
+https://user-images.githubusercontent.com/80943394/127277083-66d3f90e-29b5-4927-badb-bafac3ac9169.mov
+
 ### The reason why I was trying to refectoring❓
 
 - It was not bad 'carrot game ver.1' before refectoring but I just wanted to practice to refectoring
