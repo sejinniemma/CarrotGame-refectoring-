@@ -15,20 +15,20 @@ export const Reason = Object.freeze({
 
 
 export class GameBuilder{
-    WithGameDuration(gameDuration){
-        this.gameDuration = gameDuration;
-        return this;
-    }
+ WithGameDuration(gameDuration){
+    this.gameDuration = gameDuration;
+    return this;
+}
 
-    WithCarrotCount(carrotCount){
-        this.carrotCount = carrotCount;
-        return this;
-    }
+WithCarrotCount(carrotCount){
+    this.carrotCount = carrotCount;
+    return this;
+}
 
-    WithBugCount(bugCount){
-        this.bugCount = bugCount;
-        return this;
-    }
+WithBugCount(bugCount){
+    this.bugCount = bugCount;
+    return this;
+}
 
     build(){
         return new Game(
@@ -82,14 +82,13 @@ class Game{
         sound.PlayBackground();    
     }
 
-
+   
     stop(reason){
         this.started = false;
         this.stopGameTimer();
         this.hideGameButton();
         sound.StopBackground();
         this.gameStop && this.gameStop(reason)
-        
     }
 
     initGame(){
