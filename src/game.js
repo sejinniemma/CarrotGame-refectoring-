@@ -14,31 +14,53 @@ export const Reason = Object.freeze({
 })
 
 
+
 export class GameBuilder{
+    level(){
+        [
+            {
+                dur : this.gameDuration,
+               car : this.carrotCount,
+                bug : this.bugCount
+            },
+            {
+                dur : this.gameDuration * 2,
+                car : this.carrotCount * 2,
+                bug : this.bugCount * 2
+            }, 
+            {
+                dur : this.gameDuration * 3,
+                car : this.carrotCount * 3,
+                bug : this.bugCount * 3
+            }
+       ]
+    
+
+     } 
+
  WithGameDuration(gameDuration){
-    this.gameDuration = gameDuration;
+    this.gameDuration = gameDuration
     return this;
 }
 
 WithCarrotCount(carrotCount){
-    this.carrotCount = carrotCount;
+    this.carrotCount =  carrotCount;
     return this;
 }
 
 WithBugCount(bugCount){
-    this.bugCount = bugCount;
+    this.bugCount =  bugCount;
     return this;
 }
 
-    build(){
+build(){
         return new Game(
             this.gameDuration,
             this.carrotCount,
             this.bugCount
         )
-    
     }
-
+    
 }
 
 class Game{
