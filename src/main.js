@@ -3,7 +3,7 @@ import PopUp from "./popup.js";
 import {GameBuilder,  Reason} from "./game.js";
 import * as sound from "./sound.js";
 
-let i = 0;
+
 
 const gameFinishBanner = new PopUp();
 const game = new GameBuilder()
@@ -29,12 +29,7 @@ game.setGameStopListner((reason)=>{
             sound.PlayAlert();
             break;
     }
-    gameFinishBanner.showWithText(message);
-    if(message === Reason.win){
-        i++;
-        game.level[i];//ㅇㅒ 함수다..
-    }
-    
+    gameFinishBanner.showWithText(message);  
 })
 
 gameFinishBanner.setClickListener(()=>{
