@@ -13,8 +13,8 @@ export const Reason = Object.freeze({
     cancel : 'cancel',
 })
 
-
-
+// 1.next 함수를 만들어서 이겼을때 stop대신 이 함수
+// 2.최종적으로 이겼을 때는 조건을 만들어서 win이 나올 수 있게 만들기
 export class GameBuilder{
 
  WithGameDuration(gameDuration){
