@@ -26,7 +26,7 @@ they remember their top scope reference as long as they exists.
 When function declaration is evaluated, and function object is made,
 they save their top scope reference to their environment. 
 
--this binding issue : The reason why I made arrow function when I send startGame() to their this.onClick memeber variable:
+- this binding issue : The reason why I made arrow function when I send startGame() to their this.onClick memeber variable:
 If I send only startGame() reference , 'this' information will disapear (this.onClick).
 
 
