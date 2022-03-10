@@ -22,6 +22,7 @@ https://user-images.githubusercontent.com/80943394/127277083-66d3f90e-29b5-4927-
 
 - setClickListener :
 Although popUp class dosen't have information about startGame(), the reason why startGame() can be executed in popUp class is related their lexical scope. 
+
 they remember their top scope reference as long as they exists.
 When function declaration is evaluated, and function object is made,
 they save their top scope reference to their environment. 
