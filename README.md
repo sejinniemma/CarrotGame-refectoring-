@@ -19,6 +19,9 @@ https://user-images.githubusercontent.com/80943394/127277083-66d3f90e-29b5-4927-
 
 - This file is gathering functions related with popup from main.js
 - This is faithful to their jobs which is showing popup banner and click event by refresh button
+- setClickListener :Although popUp class dosen't have information about startGame(), the reason why startGame() can be executed in popUp class is related their lexical scope. they remember their top scope reference as long as they exists they remember their top scope reference as long as they exists.
+When function declaration is evaluated, and function object is made,
+they save their top scope reference to their environment. 
 
 
 <img width="1253" alt="스크린샷 2021-07-18 오후 12 51 57" src="https://user-images.githubusercontent.com/80943394/126055529-76038ec8-4e2e-464c-996b-18a2d370b32a.png">
