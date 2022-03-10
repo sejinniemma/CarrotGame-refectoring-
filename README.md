@@ -20,7 +20,7 @@ https://user-images.githubusercontent.com/80943394/127277083-66d3f90e-29b5-4927-
 - This file is gathering functions related with popup from main.js
 - This is faithful to their jobs which is showing popup banner and click event by refresh button
 
-- how startGame() function can be executed in popUp class ? (lexical scope) :
+- how startGame() function can be executed in popUp class ? (rememebr their top scope) :
 Although popUp class dosen't have information about startGame(), the reason why startGame() can be executed in popUp class is related their lexical scope. 
 they remember their top scope reference as long as they exists.
 When function declaration is evaluated, and function object is made,
