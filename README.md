@@ -1,7 +1,4 @@
-# 🥕Carrot-game ver.2 (Refectoring)
-
-
-https://user-images.githubusercontent.com/80943394/127277083-66d3f90e-29b5-4927-badb-bafac3ac9169.mov
+# Olaf-game ver.2 (Refectoring)
 
 https://user-images.githubusercontent.com/80943394/180550284-ebd68575-34a8-4b80-ab1c-64d8c257ab86.mov
 
