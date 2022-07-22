@@ -3,6 +3,8 @@
 
 https://user-images.githubusercontent.com/80943394/127277083-66d3f90e-29b5-4927-badb-bafac3ac9169.mov
 
+https://user-images.githubusercontent.com/80943394/180550284-ebd68575-34a8-4b80-ab1c-64d8c257ab86.mov
+
 ### The reason why I was trying to refectoring❓
 
 - It was not bad 'carrot game ver.1' before refectoring but I just wanted to practice to refectoring
